@@ -90,9 +90,3 @@ def get_ingredient_booleans(raw_sentences: List[str]):
         ingredient_booleans.append(match)
     return ingredient_booleans
 
-
-if __name__ == '__main__':
-    b = PipelineDictArgument('st', b=['klaus', 'tina'])
-    c = PipelineDictArgument('hd', b=['lukas', 'laura'])
-    a = PipelineDictArgument('a', [c,b], b='c', c=[c, b])
-    print(str(a))
