@@ -23,6 +23,10 @@ RUN apt-get update && apt-get install -y openjdk-8-jre zip \
  && rm Medex_UIMA_1.3.8.zip \
  && git clone https://github.com/facebookresearch/InferSent.git
 
+# Install Times New Roman font https://askubuntu.com/a/25614
+RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections \
+ && apt-get install -y ttf-mscorefonts-installer
+
 ENV MEDEX_PATH=/mtc/Medex_UIMA_1.3.8
 ENV PATH_TO_INFERSENT=/mtc/InferSent
 ENV PYTHONPATH=/workspace
